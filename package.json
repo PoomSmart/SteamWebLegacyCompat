@@ -1,0 +1,17 @@
+{
+  "name": "steamweblegacycompat",
+  "version": "1.0.0",
+  "description": "Makes Steam website work on older OS versions",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PoomSmart/SteamWebLegacyCompat.git"
+  },
+  "author": "PoomSmart",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.27.2",
+    "@babel/core": "^7.27.4",
+    "@babel/preset-env": "^7.27.2",
+    "uglify-js": "^3.19.3"
+  }
+}
