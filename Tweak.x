@@ -7,6 +7,7 @@
 #import <WebKit/WKWebViewConfiguration.h>
 #import <WebKit/WKUserContentController.h>
 #import <WebKit/WKUserScript.h>
+#import <version.h>
 
 static void injectScript(WKWebView *webview, NSString *identifier, NSString *script) {
     WKUserScript *userScript = [[WKUserScript alloc] initWithSource:script injectionTime:WKUserScriptInjectionTimeAtDocumentStart forMainFrameOnly:YES];
@@ -30,6 +31,7 @@ static void inject(WKWebView *webview) {
     for (NSString *jsFile in jsFiles) {
         NSString *filePath = [assetsFolder stringByAppendingPathComponent:jsFile];
         NSString *fileName = [jsFile stringByDeletingPathExtension];
+        if ([fileName isEqualToString:@"libraries.min"] && IS_IOS_OR_NEWER(iOS_15_0)) return;
         NSString *scriptContent = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
         injectScript(webview, fileName, scriptContent);
     }

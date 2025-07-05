@@ -1,6 +1,6 @@
 Package: com.ps.steamweblegacycompat
 Name: SteamWebLegacyCompat
-Version: 1.0.0
+Version: 1.0.1
 Architecture: iphoneos-arm
 Description: Makes Steam website functional on iOS 14.1 - 16.3
 Maintainer: PoomSmart
